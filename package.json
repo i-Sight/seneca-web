@@ -31,6 +31,7 @@
     "connect": "~3.6.6",
     "json-stringify-safe": "~5.0.0",
     "nid": "~0.3.2",
+    "serve-static": "~1.13.2",
     "success": "~0.1.0",
     "rolling-stats": "~0.1.0"
   },
