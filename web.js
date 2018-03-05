@@ -11,6 +11,7 @@ var parambulator        = require('parambulator')
 var mstring             = require('mstring')
 var nid                 = require('nid')
 var connect             = require('connect')
+var serveStatic         = require('serve-static')
 var json_stringify_safe = require('json-stringify-safe')
 var stats               = require('rolling-stats')
 
@@ -246,7 +247,7 @@ module.exports = function( options ) {
 
 
   var app = connect()
-  app.use(connect.static(__dirname+'/web'))
+  app.use(serveStatic(__dirname + '/web'))
 
   var use = function(req,res,next){
     if( 0===req.url.indexOf(options.contentprefix) ) {
