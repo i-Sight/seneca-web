@@ -209,6 +209,7 @@ module.exports = function( options ) {
     // startware and endware always called, regardless of prefix
 
     var service = function(req,res,next) {
+      if(spec.baseUrl !== req.baseUrl) return next();
       var si = req.seneca || instance
       if( spec.startware ) {
         //var begin_startware = Date.now()
