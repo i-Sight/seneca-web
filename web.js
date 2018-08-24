@@ -189,7 +189,8 @@ module.exports = function( options ) {
     type$: 'object',
     pin:    {required$:true,object$:true},
     map:    {required$:true,object$:true},
-    prefix: 'string$'
+    prefix: 'string$',
+    baseUrl: 'string$'
   }, {
     topname:'spec',
     msgprefix:'http(spec): ',
@@ -204,11 +205,12 @@ module.exports = function( options ) {
     var prefix    = fixprefix( spec.prefix, options.prefix )
     var actmap    = makeactmap( instance, spec.pin )
     var maprouter = makemaprouter(instance,spec,prefix,actmap,routemap,{plugin:spec.plugin$,serviceid:spec.serviceid$},timestats)
+    var baseUrl   = spec.baseUrl
 
 
     // startware and endware always called, regardless of prefix
-
     var service = function(req,res,next) {
+      if(!_.isUndefined(baseUrl) && !_.isNull(baseUrl) && baseUrl !== req.baseUrl) return next();
       var si = req.seneca || instance
       if( spec.startware ) {
         //var begin_startware = Date.now()
