@@ -1,5 +1,5 @@
 {
-  "name": "seneca-web",
+  "name": "@isight/seneca-web",
   "description": "A plugin that provides HTTP functionality for the Seneca framework.",
   "version": "0.1.5",
   "keywords": [
