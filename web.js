@@ -172,10 +172,6 @@ module.exports = function( options ) {
         stats[name] = {}
       })
 
-      _.each( timestats.names(), function(name) {
-        stats[name] = timestats.calculate(name)
-      })
-
       done(null,stats)
     })
   }
@@ -591,9 +587,6 @@ function makedispatch(act,spec,urlspec,handlerspec,timestats) {
     var respond = function(err,obj){
       var qi = req.url.indexOf('?')
       var url = -1 == qi ? req.url : req.url.substring(0,qi)
-      var name = (spec.plugin$ && spec.plugin$.name) || '-'
-      timestats.point( Date.now()-begin, name+';'+req.method+';'+url );
-
       responder.call(si,req,res,handlerspec,err,obj)
     }
 
