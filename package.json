@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "body-parser": "^1.15.2",
-    "code": "^4.1.0",
+    "code": "^5.2.4",
     "connect": "^3.5.0",
     "cookie-parser": "^1.4.3",
     "coveralls": "^2.11.12",
