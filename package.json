@@ -58,7 +58,7 @@
     "eslint-plugin-standard": "^2.0.0",
     "express": "^4.14.0",
     "express-session": "^1.14.1",
-    "hapi": "^15.0.3",
+    "hapi": "^18.1.0",
     "hapi-auth-basic": "^4.2.0",
     "lab": "^13.1.0",
     "passport": "^0.3.2",
