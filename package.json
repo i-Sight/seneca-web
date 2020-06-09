@@ -25,15 +25,16 @@
     "web"
   ],
   "dependencies": {
-    "underscore": "~1.6.0",
-    "mstring": "~0.1.2",
-    "parambulator": "~0.1.6",
     "connect": "~3.6.6",
+    "html-css-sanitizer": "git://github.com/i-Sight/node-caja-sanitizer.git#v0.0.3",
     "json-stringify-safe": "~5.0.0",
+    "mstring": "~0.1.2",
     "nid": "~0.3.2",
+    "parambulator": "~0.1.6",
+    "rolling-stats": "~0.1.0",
     "serve-static": "~1.13.2",
     "success": "~0.1.0",
-    "rolling-stats": "~0.1.0"
+    "underscore": "~1.6.0"
   },
   "devDependencies": {
     "chai": "~1.9.1",

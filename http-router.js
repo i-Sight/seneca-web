@@ -13,6 +13,7 @@
  */
 
 var parse = require('url').parse;
+var sanitizeHtml = require('html-css-sanitizer').sanitize;
 
 /**
  * Expose router.
@@ -351,7 +352,7 @@ function match(req, routes, i) {
         var j
         for (j = 1, len = captures.length; j < len; ++j) {
           var key = keys[j-1],
-            val = typeof captures[j] === 'string' ? decodeURIComponent(captures[j]) : captures[j];
+            val = typeof captures[j] === 'string' ? sanitizeHtml(decodeURIComponent(captures[j])) : captures[j];
           if (key) {
             fn.params[key] = val;
           } else {
